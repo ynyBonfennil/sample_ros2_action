@@ -20,6 +20,9 @@ private:
 
   rclcpp_action::Client<ActionT>::SharedPtr action_client_;
   rclcpp::TimerBase::SharedPtr action_request_timer_;
+  rclcpp::TimerBase::SharedPtr action_request_timeout_timer_;
+
+  ActionTGoalHandle::SharedPtr goal_handle_;
 
 public:
   Ros2ActionClient() = delete;

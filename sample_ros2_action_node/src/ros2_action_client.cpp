@@ -62,6 +62,9 @@ void Ros2ActionClient::resultCallback(
 
 void Ros2ActionClient::startActionRequestTimer()
 {
+  this->action_request_timer_.reset();
+  this->action_request_timeout_timer_.reset();
+
   this->action_request_timer_ = this->create_wall_timer(
     std::chrono::seconds(1),
     [this]() {
@@ -70,6 +73,19 @@ void Ros2ActionClient::startActionRequestTimer()
     }
   );
 
+  this->action_request_timeout_timer_ = this->create_wall_timer(
+    std::chrono::seconds(20),
+    [this]() {
+      RCLCPP_ERROR(this->get_logger(), "Action request timed out");
+      this->action_request_timeout_timer_.reset();
+      if (this->goal_handle_) {
+        this->action_client_->async_cancel_goal(this->goal_handle_);
+      }
+
+      RCLCPP_INFO(this->get_logger(), "Sending new goal request");
+      this->startActionRequestTimer();
+    }
+  );
 }
 
 }  // namespace sample_ros2_action_node
