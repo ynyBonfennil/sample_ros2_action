@@ -6,13 +6,10 @@
         "limitSymbolsToIncludedHeaders": false
       },
       "includePath": [
-        "${workspaceFolder}/xv3_cloud_interface_common/include/**",
-        "${workspaceFolder}/xv3_cloud_interface_node/include/**",
-        "${workspaceFolder}/../../install/xv3_cloud_interface_msgs/include/xv3_cloud_interface_msgs/**",
-        "${workspaceFolder}/../../install/xv3_cloud_interface_param/include/**",
-        "${workspaceFolder}/../../install/aws_iot_device_sdk_cpp_v2_vendor/opt/aws_iot_device_sdk_cpp_v2_vendor/include/**",
+        "${workspaceFolder}/sample_ros2_action_node/include/**",
+        "${workspaceFolder}/../../install/sample_ros2_action_msgs/include/xv3_cloud_interface_msgs/**",
+        "${workspaceFolder}/../../install/sample_ros2_action_node/include/**",
         "/opt/ros/humble/include/**",
-        "/opt/ros/humble/opt/aws_iot_device_sdk_cpp_v2_vendor/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",
