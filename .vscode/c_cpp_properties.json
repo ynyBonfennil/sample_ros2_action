@@ -7,7 +7,7 @@
       },
       "includePath": [
         "${workspaceFolder}/sample_ros2_action_node/include/**",
-        "${workspaceFolder}/../../install/sample_ros2_action_msgs/include/xv3_cloud_interface_msgs/**",
+        "${workspaceFolder}/../../install/sample_ros2_action_msgs/include/sample_ros2_action_msgs/**",
         "${workspaceFolder}/../../install/sample_ros2_action_node/include/**",
         "/opt/ros/humble/include/**",
         "/usr/include/**"
