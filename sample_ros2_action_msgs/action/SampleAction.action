@@ -1,0 +1,8 @@
+# goal definition
+string input
+---
+# result definition
+string output
+---
+# feedbaco definition
+string feedback
