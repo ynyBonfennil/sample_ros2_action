@@ -16,6 +16,14 @@ rclcpp_components_register_node(
   PLUGIN "${PROJECT_NAME}::Ros2ActionServer"
   EXECUTABLE ${TARGET}_exec)
 
+set(TARGET ros2_action_client)
+ament_auto_add_library(
+  ${TARGET} SHARED src/${TARGET}.cpp)
+rclcpp_components_register_node(
+  ${TARGET}
+  PLUGIN "${PROJECT_NAME}::Ros2ActionClient"
+  EXECUTABLE ${TARGET}_exec)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   set(ament_cmake_copyright_FOUND TRUE)
